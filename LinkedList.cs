@@ -62,11 +62,6 @@ public class Node{
             next = null;
         }
 
-        public Node(int newData, Node newNext) {
-            data = newData;
-            next = newNext;
-        }
-
         public int Data {
             get { return data; }
             set { data = value; }
