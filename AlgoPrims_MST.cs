@@ -20,34 +20,6 @@ namespace AlgoPrims_MST
         static int min = int.MaxValue;
         static int minVertex = 0;
 
-        #region ########### public properties ##########
-        public static int MIN
-        {
-            get{return min;}
-            set{min = value;}
-        }
-        public static int minVERTEX
-        {
-            get{return minVertex;}
-            set{minVertex = value;}
-        }
-        public static int S
-        {
-            get { return s; }
-            set { s = value; }
-        }
-        public static int D
-        {
-            get { return d; }
-            set { d = value; }
-        }
-        public static int W
-        {
-            get { return w; }
-            set { w = value; }
-        }
-        #endregion ########### End declaration of public properties ##########
-
         static void Main(string[] args)
         {
             int Vertices = Convert.ToInt32(Console.ReadLine());
@@ -105,34 +77,34 @@ namespace AlgoPrims_MST
                 if (vKeyVal[list.endV] == int.MaxValue)
                     vKeyVal[list.endV] = list.weight;
 
-                if (vKeyVal[list.endV] < int.MaxValue && MIN > vKeyVal[list.endV] && !mstSet.Contains(list.endV))
+                if (vKeyVal[list.endV] < int.MaxValue && min > vKeyVal[list.endV] && !mstSet.Contains(list.endV))
                 {
-                    MIN = vKeyVal[list.endV];
-                    minVERTEX = list.endV;
+                    min = vKeyVal[list.endV];
+                    minVertex = list.endV;
 
-                    S = mstSet[count];
-                    D = minVERTEX;
-                    W = MIN;
+                    s = mstSet[count];
+                    d = minVertex;
+                    w = min;
                 }
             }
         }
 
         static void primsMST(LinkedList<Tuple<int>>[] adjacencyList,int count)
         {
-            minVERTEX = 0;
-            MIN = int.MaxValue;
+            minVertex = 0;
+            min = int.MaxValue;
 
             iterateAdjacent(adjacencyList,count); //iterate over adjacent vertices
 
-            if (minVERTEX == 0 && mstSet.Count < totalVertex){
+            if (minVertex == 0 && mstSet.Count < totalVertex){
                 count--; //backtrack to find untravelled vertex
                 iterateAdjacent(adjacencyList, count); //iterate over adjacent vertices
             }
 
-            sourceV.Add(S);
-            destinationV.Add(D);
-            weightVal.Add(W);
-            mstSet.Add(minVERTEX);
+            sourceV.Add(s);
+            destinationV.Add(d);
+            weightVal.Add(w);
+            mstSet.Add(minVertex);
         }
 
     }
