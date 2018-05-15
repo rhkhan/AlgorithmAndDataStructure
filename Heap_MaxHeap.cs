@@ -1,6 +1,6 @@
 using System;
 
-namespace Heap_MinHeap
+namespace Heap_MaxHeap
 {
 class Program
     {
