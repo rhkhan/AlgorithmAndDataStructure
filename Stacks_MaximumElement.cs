@@ -12,7 +12,6 @@ namespace Stacks_MaximumElement
         {
             int N = Convert.ToInt32(Console.ReadLine());
             Stack<int> st = new Stack<int>();
-            Stack<int> m = new Stack<int>();
             int max = int.MinValue;
 
             while (N > 0)
