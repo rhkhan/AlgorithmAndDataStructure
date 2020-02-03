@@ -1,0 +1,82 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace BinarySearchTree
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            BinarySearchTree nums = new BinarySearchTree();
+            nums.Insert(50);
+            nums.Insert(17);
+            nums.Insert(23);
+            nums.Insert(12);
+            nums.Insert(19);
+            nums.Insert(54);
+            nums.Insert(9);
+            nums.Insert(14);
+            nums.Insert(67);
+            nums.Insert(76);
+            nums.Insert(72);
+        }
+    }
+
+
+
+    public class BinarySearchTree
+    {
+        public class Node
+        {
+            public int data;
+            public Node left;
+            public Node right;
+        }
+
+        public Node root;
+        public BinarySearchTree()
+        {
+            root = null;
+        }
+
+        public void Insert(int val)
+        {
+            Node newnode = new Node();
+            newnode.data = val;
+
+            if (root == null)
+                root = newnode;
+            else
+            {
+                Node current = root;
+                Node parent;
+
+                while (true)
+                {
+                    parent = current;
+                    if (val < current.data)
+                    {
+                        current = current.left;
+                        if (current == null)
+                        {
+                            parent.left = newnode;
+                            break;
+                        }
+                        else
+                        {
+                            current = current.right;
+                            if (current == null)
+                            {
+                                parent.right = newnode;
+                            }
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
