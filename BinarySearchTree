@@ -29,7 +29,7 @@ namespace BinarySearchTree
 
     public class BinarySearchTree
     {
-        public class Node
+        public class Node // class for creating the node with data, left child and right child
         {
             public int data;
             public Node left;
@@ -51,23 +51,23 @@ namespace BinarySearchTree
                 root = newnode;
             else
             {
-                Node current = root;
-                Node parent;
+                Node current = root; // set the root to the current
+                Node parent; // declare a parent node to store the newly added nodes
 
                 while (true)
                 {
-                    parent = current;
+                    parent = current; // store current node in parent
                     if (val < current.data)
                     {
-                        current = current.left;
+                        current = current.left; // set current to current.left and check null
                         if (current == null)
                         {
-                            parent.left = newnode;
+                            parent.left = newnode; //if no  left child is found then store it to the left of the parent
                             break;
                         }
                         else
                         {
-                            current = current.right;
+                            current = current.right; //if no  right child is found then store it to the right of the parent
                             if (current == null)
                             {
                                 parent.right = newnode;
