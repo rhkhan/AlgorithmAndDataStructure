@@ -1,0 +1,35 @@
+Node ReverseLinkedListForGivenRange(Node head, int m, int n){
+ if(head == null)
+  return head;
+ if(m==n)
+  return head;
+  
+  Node current = head;
+  Node prev=null;
+  Node next=null;
+  
+  int i=0;
+  
+  while(i<m){
+   prev=current;
+   current=current.next;
+   i++;
+  }
+  
+  Node startnode=current;
+  Node prevnode=current;
+  current=current.next;
+  
+  while(i<n){
+   nextnode=current.next;
+   current.next=prevnode;
+   prevnode=current;
+   current=nextnode;
+  }
+  
+  prev.next=prevnode // the node that got just before the starting of 'n' is assigned to the node that found which started 'm'
+  startnode.next=current; // the node that just started from 'n' is assigned to the next node that comes after the 'm'
+  
+  return head;
+  
+}
