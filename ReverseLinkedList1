@@ -1,0 +1,15 @@
+Node ReverseLinkList(Node head){
+ Node current=head;
+ Node next = null;
+ Node prev= null;
+ 
+ while(current!=null){
+   next =  current.next;
+   current.next=prev;
+   prev=current;
+   current=next;
+ }
+ head=prev;
+ 
+ return head;
+}
