@@ -1,0 +1,7 @@
+public Node RemoveDuplicate(Node head){
+  Dictionary<int,int> dict=new Dictionary<int,int>();
+  Node current = head;
+  while(current.next!=null){
+    
+  }
+}
