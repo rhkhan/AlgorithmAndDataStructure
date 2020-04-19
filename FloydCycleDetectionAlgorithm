@@ -51,7 +51,7 @@ public class LinkedList
 		/*Create loop for testing */
 		llist.head.next.next.next.next = llist.head; 
 
-		if(llist.detectLoop())
+		if(llist.detectCycle())
       Console.writeLine("Cycle found");
     else
       Console.writeLine("No Cycle");
