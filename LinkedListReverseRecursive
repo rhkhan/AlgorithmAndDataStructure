@@ -1,9 +1,0 @@
-Node reverseLinkedListRecursive(Node head){
- if(head ==null || head.next == null)
- return head;
- 
- Node n=reverseLinkedListRecursive(head.next);
- head.next.next=head;
- head.next=null;
- return n;
-}
