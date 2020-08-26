@@ -69,7 +69,7 @@ public class LinkedList
 
         Console.WriteLine("List after removal of elements");
         llist.printList();
-
+        
         Console.Read();
     }
 }
