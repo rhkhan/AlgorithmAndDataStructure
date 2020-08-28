@@ -22,11 +22,15 @@ namespace LinkedListPairWiseSwap
         public Node head;
         public void swapPairWise()
         {
+            if (head == null || head.next==null)
+                return;
+
             Node current = head;
             Node prev = null;
             int counter = 1;
             Node resTemp = null;
             int pos = 1;
+            
             while (current != null && current.next != null) // check null of two nodes such as: current and it's next node
             {
                 counter++;
