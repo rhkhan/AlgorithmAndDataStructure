@@ -1,0 +1,12 @@
+public void swapPairWise(){
+ if(head==null || head.next==null)
+  return;
+  
+ Node current=head;
+ while(current!=null && current.next!=null){
+   int tmp=current.next.data;
+   current.next.data=current.data;
+   current.data=tmp;
+   current=current.next.next;
+ }  
+}
