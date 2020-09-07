@@ -30,7 +30,7 @@ public class LinkedList{
     return slowptr;
   }
   
-  Public sortedMerge(Node a, Node b){
+  Public Node sortedMerge(Node a, Node b){
    if(a==null)
     return b;
    if(b==null)
@@ -47,7 +47,7 @@ public class LinkedList{
     return result;
   }
   
-  Node mergeSort(Node h){
+  public Node mergeSort(Node h){
     if(h==null || h.next==null){
      return h;
     }
