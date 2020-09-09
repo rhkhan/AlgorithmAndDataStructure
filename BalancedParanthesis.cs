@@ -10,21 +10,12 @@ public bool isBalanced(string str)
       if(st.Count==0) return false;
       else
       {
-        if(str[i]==')')
-        {
-          if(st.Pop()!='(')
+        if(str[i]==')' && st.Pop()!='(')
            return false;
-        }
-        else if(str[i]=='}')
-        {
-         if(st.Pop()!='{')
+        else if(str[i]=='}' && st.Pop()!='{')
            return false;
-        }
-        else if(str[i]==']')
-        {
-         if(st.Pop()!='[')
+        else if(str[i]==']' && st.Pop()!='[')
            return false;
-        }
       }
     }
   } //end for
