@@ -64,6 +64,7 @@ public class BinaryMinHeap{
   public void heapifyDOWN(int index){
     int left=getLeftIndex(index);
     int right=getRightIndex(index);
+    int smallest=index;
     
     if(right>=heapsize){
       if(left>=heapsize)
