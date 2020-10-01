@@ -88,7 +88,7 @@ public class BinaryMinHeap{
 
 //Driver function
 public static void main(string[] args){
- BinaryMinHeap bmp=new BinaryMinHeap();
+ BinaryMinHeap bmp=new BinaryMinHeap(6);
  bmp.insert(1);
  bmp.insert(2);
  bmp.insert(3);
