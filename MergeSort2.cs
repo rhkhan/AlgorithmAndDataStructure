@@ -59,10 +59,10 @@ namespace MergeSort2
                 k++;
             }
 
-            while (i < sizeRight)
+            while (j < sizeRight)
             {
-                arr[k] = rightArr[i];
-                i++;
+                arr[k] = rightArr[j];
+                j++;
                 k++;
             }
 
