@@ -1,4 +1,4 @@
-// C# program to detect a cycle in a linked list 
+// C# program to detect a cycle/loop in a linked list 
 using System; 
 using System.Collections.Generic; 
 
@@ -28,7 +28,7 @@ class LinkedList {
 	{ 
 		HashSet<Node> hashset = new HashSet<Node>(); 
 		while (node != null) { 
-			if (hashset.Contains(h)) 
+			if (hashset.Contains(node)) 
 				return true; 
         
 			hashset.Add(node); 
@@ -51,7 +51,7 @@ class LinkedList {
 		/*Create loop for testing */
 		llist.head.next.next.next.next = llist.head; 
 
-		if (detectLoop(llist.head)) 
+		if (detectCycle(llist.head)) 
 			Console.WriteLine("Loop found"); 
 		else
 			Console.WriteLine("No Loop"); 
