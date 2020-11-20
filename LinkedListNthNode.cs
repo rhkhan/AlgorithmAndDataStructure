@@ -1,7 +1,6 @@
 1) Get the length of Linked List. Let the length be len. 
 2) Print the (len – n + 1)th node from the beginning of the Linked List. 
 
-
  void printNthFromEnd(int n)  
     {  
         int len = 0;  
