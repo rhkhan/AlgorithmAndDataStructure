@@ -38,13 +38,13 @@ public class LinkedListDoubly{
         Node i=low.prev;
         for(Node j=low;j!=high;j=j.next){
           if(j.data<=x){
-            i=(i==null)?l:i.next;
+            i=(i==null)?low:i.next;
             tmp=j.data;
             j.data=i.data;
             i.data=temp;
           }
         }
-        i=(i==null)?l:i.next;
+        i=(i==null)?low:i.next;
         tmp=i.data;
         i.data=high.data;
         high.data=temp;
