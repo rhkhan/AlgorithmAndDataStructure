@@ -55,6 +55,7 @@ public class BinaryTree
       parent.left=leftchild;
       parent.right=rightchild;
     }
+    return node;
   }
   
    public void inorderTraversal(BinaryTreeNode node)  
