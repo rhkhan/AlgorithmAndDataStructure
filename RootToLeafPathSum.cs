@@ -1,5 +1,3 @@
-// c# program to find sum of all numbers 
-// that are formed from root to leaf paths 
 using System; 
 
 public class Node 
@@ -14,51 +12,34 @@ public class Node
 	} 
 } 
 
-class GFG 
+public class Tree 
 { 
-public Node root; 
+	public Node root; 
 
-public virtual int treePathsSumUtil(Node node, 
-									int val) 
-{ 
-	// Base case 
-	if (node == null) 
+	public virtual int treePathsSum(Node root,int sum) 
 	{ 
-		return 0; 
+	    if(root==null)
+	      return 0;
+	    sum=(sum*10+root.data);
+	    if(root.left==null && root.right==null)
+		return sum;
+
+	    return treePathsSum(root.left,sum)+treePathsSum(root.right,sum);
 	} 
 
-	// Update val 
-	val = (val * 10 + node.data); 
-
-	if (node.left == null && node.right == null) 
+	public static void Main(string[] args) 
 	{ 
-		return val; 
+		Tree tree = new Tree(); 
+		tree.root = new Node(6); 
+		tree.root.left = new Node(3); 
+		tree.root.right = new Node(5); 
+		tree.root.right.right = new Node(4); 
+		tree.root.left.left = new Node(2); 
+		tree.root.left.right = new Node(5); 
+		tree.root.left.right.right = new Node(4); 
+		tree.root.left.right.left = new Node(7); 
+
+		Console.Write("Sum of all paths is " + tree.treePathsSum(tree.root,0)); 
 	} 
-
-	// recur sum of values for left and right subtree 
-	return treePathsSumUtil(node.left, val) + 
-		treePathsSumUtil(node.right, val); 
-} 
-
-public virtual int treePathsSum(Node node) 
-{ 
-	return treePathsSumUtil(node, 0); 
-} 
-
-public static void Main(string[] args) 
-{ 
-	GFG tree = new GFG(); 
-	tree.root = new Node(6); 
-	tree.root.left = new Node(3); 
-	tree.root.right = new Node(5); 
-	tree.root.right.right = new Node(4); 
-	tree.root.left.left = new Node(2); 
-	tree.root.left.right = new Node(5); 
-	tree.root.left.right.right = new Node(4); 
-	tree.root.left.right.left = new Node(7); 
-
-	Console.Write("Sum of all paths is " + 
-				tree.treePathsSum(tree.root)); 
-} 
 } 
 
