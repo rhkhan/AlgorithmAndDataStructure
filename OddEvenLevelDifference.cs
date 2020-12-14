@@ -1,0 +1,6 @@
+/*
+   traverse the tree using level order traversal
+   declare two variable named oddLevelSum and evelLevelSum
+   update the oddLevelSum for all the odd leveled nodes and evenLevelSum for all the even leveled nodes
+   calculate the difference and return the result
+*/
