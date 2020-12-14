@@ -1,12 +1,12 @@
 import java.util.*;
 
-class GFG{
+public class Tree{
 	
 static class Node 
 {
 	int val;
 	Node left, right;
-};
+}
 
 static Node newNode(int data)
 {
@@ -16,46 +16,36 @@ static Node newNode(int data)
 	return temp;
 }
 
-static void dfs(Node root, int sum,
-				ArrayList<Integer> pathSum)
-{
-	
-	// Return if the node is NULL
+static void dfs(Node root, int sum, ArrayList<Integer> pathSum)
+{	
 	if (root == null)
 		return;
-
-	// Add value of the node to
-	// the path sum
+	
 	sum += root.val;
 
 	// Store the path sum if node is leaf
-	if (root.left == null && 
-	root.right == null)
+	if (root.left == null && root.right == null)
 	{
-		pathSum.add(sum);
-		return;
+	   pathSum.add(sum);
+	   return;
 	}
 
 	// Move to the left child
 	dfs(root.left, sum, pathSum);
-
 	// Move to the right child
 	dfs(root.right, sum, pathSum);
 }
 
 static void findPathSum(Node root) 
 { 
-	
-	// To store all the path sum
-	ArrayList<Integer> pathSum = new ArrayList<>();
+	ArrayList<Integer> pathSumList = new ArrayList<>();
 
-	// Calling dfs function
 	dfs(root, 0, pathSum);
 
 	// Printing all the path sum
 	for(int num : pathSum)
 	{
-		System.out.print(num + " ");
+	  System.out.print(num + " ");
 	} 
 }
 
