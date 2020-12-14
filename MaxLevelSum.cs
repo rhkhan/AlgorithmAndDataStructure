@@ -10,7 +10,7 @@ public static int maxLevelSumResult(Node root)
   {
     int queueSize=queue.count;
     int sum=0;
-    while(count-->0)
+    while(queueSize-->0)
     {
       Node temp=queue.Pop();
       sum+=temp.data;
