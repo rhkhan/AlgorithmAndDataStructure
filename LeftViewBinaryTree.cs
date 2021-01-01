@@ -28,7 +28,7 @@ public class BinaryTree
       for(int i=1;i<=n;i++)
       {
         Node temp=queue.Dequeue();
-        if(i==n)
+        if(i==1) // first node of the current level
         {
          Console.Write(temp.data+" ");
         }
