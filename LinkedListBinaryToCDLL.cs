@@ -12,6 +12,18 @@ Approach 1:
 
 
 //Approach 2:
+public class Node
+{
+  public int val;
+  public Node left,right;
+  
+  public Node(int val)
+  {
+    this.val = val;
+    left = right = null;
+  }
+}
+
 public class Tree
 {
   public Node binaryTreetoCDLL(Node root)
