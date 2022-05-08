@@ -26,6 +26,12 @@ public class Node
 
 public class Tree
 {
+  internal Node root;
+  public Tree()
+  {
+     root = null;
+  }
+ 
   public Node binaryTreetoCDLL(Node root)
   {
    if(root==null)
