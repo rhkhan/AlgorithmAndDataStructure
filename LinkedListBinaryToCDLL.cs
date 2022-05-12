@@ -40,6 +40,8 @@ public class Tree
     Node leftList=binaryTreetoCDLL(root.left);
     Node rightList=binaryTreetoCDLL(root.right);
 
+    // Circular linklist of a single node, make the left and right pointer
+    // of root node point to itself
     root.left=root.right=root;
 
     return concatenate(concatenate(leftList,root),rightList));
