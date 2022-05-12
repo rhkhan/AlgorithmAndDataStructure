@@ -3,15 +3,18 @@
         Node current = head;  
         if (current == null)  
         {  
+            //set the next of new_node to new_node to make it circular
+            // and set the new_node as the head node
             new_node.next = new_node;  
             head = new_node;  
   
         }  
         else if (current.data >= new_node.data)  
         {  
-            /* If value is smaller than 
-                head's value then we need 
-                to change next of last node */
+            /* If new_node data is smaller then
+                current/root node then traverse
+                to add the new_node at first position
+                And set the new_node as head node*/
             while (current.next != head)  
                 current = current.next;  
   
