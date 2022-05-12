@@ -13,15 +13,13 @@ static bool isPalindrome(Node head)
     while (head != null)
     {
         int d = stack.Pop();
-        if (head.data == d) 
-            ispalin = true;
-        else
+        if (head.data != d) 
         {
             ispalin = false;
-            break;
+            return ispalin;
         }
         head = head.next;
     }
     return ispalin;
 }
-}
+
