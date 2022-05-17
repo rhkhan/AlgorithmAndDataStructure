@@ -9,7 +9,7 @@ public static int BinarySearchIterative(int[] arr,int keyVal){
       int midIndex=(minIndex+maxIndex)/2;
       if(keyVal==arr[midIndex])
         return ++midIndex;
-      else if(keyVal>midIndex)
+      else if(keyVal>arr[midIndex])
         minIndex=midIndex+1; // If keyVal is greater then the mid the search in the right portion
       else
         maxIndex=midIndex-1; // else search in the left portion  
