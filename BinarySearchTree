@@ -1,82 +1,69 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace BinarySearchTree
-{
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            BinarySearchTree nums = new BinarySearchTree();
-            nums.Insert(50);
-            nums.Insert(17);
-            nums.Insert(23);
-            nums.Insert(12);
-            nums.Insert(19);
-            nums.Insert(54);
-            nums.Insert(9);
-            nums.Insert(14);
-            nums.Insert(67);
-            nums.Insert(76);
-            nums.Insert(72);
-        }
-    }
 
 
+public class GFG {
+public static void Main(String[] args) {
+	BST tree = new BST();
+	tree.insert(30);
+	tree.insert(50);
+	tree.insert(15);
+	tree.insert(20);
+	tree.insert(10);
+	tree.insert(40);
+	tree.insert(60);
+	tree.inorder();
+}
+}
 
-    public class BinarySearchTree
-    {
-        public class Node // class for creating the node with data, left child and right child
-        {
-            public int data;
-            public Node left;
-            public Node right;
-        }
+public class Node {
+public Node left;
+public int val;
+public Node right;
 
-        public Node root;
-        public BinarySearchTree()
-        {
-            root = null;
-        }
+public Node(int val) {
+	this.val = val;
+}
+}
 
-        public void Insert(int val)
-        {
-            Node newnode = new Node();
-            newnode.data = val;
+public class BST {
+public Node root;
 
-            if (root == null)
-                root = newnode;
-            else
-            {
-                Node current = root; // set the root to the current
-                Node parent; // declare a parent node to store the newly added nodes
+public void insert(int key) {
+	Node node = new Node(key);
+	if (root == null) {
+	root = node;
+	return;
+	}
+	Node prev = null;
+	Node temp = root;
+	while (temp != null) {
+	if (temp.val > key) {
+		prev = temp;
+		temp = temp.left;
+	} else if (temp.val < key) {
+		prev = temp;
+		temp = temp.right;
+	}
+	}
+	if (prev.val > key)
+	prev.left = node;
+	else
+	prev.right = node;
+}
 
-                while (true)
-                {
-                    parent = current; // store current node in parent
-                    if (val < current.data)
-                    {
-                        current = current.left; // set current to current.left and check null
-                        if (current == null)
-                        {
-                            parent.left = newnode; //if no  left child is found then store it to the left of the parent
-                            break;
-                        }
-                        else
-                        {
-                            current = current.right; //if no  right child is found then store it to the right of the parent
-                            if (current == null)
-                            {
-                                parent.right = newnode;
-                            }
-                            break;
-                        }
-                    }
-                }
-            }
-        }
-    }
+public void inorder() {
+	Node temp = root;
+	Stack<Node> stack = new Stack<Node>();
+	while (temp != null || stack.Count!=0) {
+	if (temp != null) {
+		stack.Push(temp);
+		temp = temp.left;
+	} else {
+		temp = stack.Pop();
+		Console.Write(temp.val + " ");
+		temp = temp.right;
+	}
+	}
+}
 }
