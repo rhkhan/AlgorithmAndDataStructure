@@ -31,6 +31,7 @@ namespace Kruskal
             Console.WriteLine("Enter Edges: source, destination, weight: ");
             while (edge > 0) //Enter each edge
             {
+                // for each edge: start node, end node and vertex weight
                 int[] startEndVertexWeight = Array.ConvertAll(Console.ReadLine().Split(),int.Parse);
                 int startVertex = startEndVertexWeight[0];
                 int endVertex = startEndVertexWeight[1];
