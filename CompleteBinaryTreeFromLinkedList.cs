@@ -31,7 +31,7 @@ public class BinaryTree
 	void push(int new_data) 
 	{ 
 		// allocate node and assign data 
-		ListNode new_node = new ListNode(new_data); 
+		LinkedListNode new_node = new LinkedListNode(new_data); 
 
 		// link the old list off the new node 
 		new_node.next = head; 
