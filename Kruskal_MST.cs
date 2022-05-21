@@ -127,39 +127,28 @@ namespace Kruskal
             {
                 if (a[i] <= pivot)
                 {
-                    temp = a[i];
-                    a[i] = a[j];
-                    a[j] = temp;
-
-                    tempS = sourceVertexA[i];
-                    sourceVertexA[i] = sourceVertexA[j];
-                    sourceVertexA[j] = tempS;
-
-                    tempD = destVertexA[i];
-                    destVertexA[i] = destVertexA[j];
-                    destVertexA[j] = tempD;
-
+                    swap(a, i, j);
+                    swap(sourceVertexA, i, j);
+                    swap(destVertexA, i, j);
+                    
                     j++;
                 }
             }
-
-            temp = a[end];
-            a[end] = a[j];
-            a[j] = temp;
-
-            tempS = sourceVertexA[end];
-            sourceVertexA[end] = sourceVertexA[j];
-            sourceVertexA[j] = tempS;
-
-            tempD = destVertexA[end];
-            destVertexA[end] = destVertexA[j];
-            destVertexA[j] = tempD;
-
+            
+            swap(a, end, j);
+            swap(sourceVertexA, end, j);
+            swap(destVertexA, end, j);
             return j;
         }
-
+       
+        static swap(int[] arr, int x, int y)
+        {
+           int temp = arr[x];
+           arr[x] = arr[y];
+           arr[y] = arr[x];
+        }
     }
-
+    
     public class Tuple<T>
     {
         public T endV { get; set; }
@@ -178,5 +167,4 @@ namespace Kruskal
        public Node Parent;
        public int rank;
     }
-
 }
