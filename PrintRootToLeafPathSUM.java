@@ -40,7 +40,7 @@ static void findPathSum(Node root)
 { 
 	ArrayList<Integer> pathSumList = new ArrayList<>();
 
-	dfs(root, 0, pathSum);
+	dfs(root, 0, pathSumList);
 
 	// Printing all the path sum
 	for(int num : pathSum)
