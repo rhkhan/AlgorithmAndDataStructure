@@ -14,6 +14,11 @@ namespace NumberofIslands
             parent = new int[row * col];
         }
 
+        public void makeSet(int d)
+        {
+            parent[d] = d;
+        }
+        
         public int findset(int x)
         {
             if (parent[x] == x)
@@ -58,7 +63,7 @@ namespace NumberofIslands
                 for(int j = 0; j < col; j++)
                 {
                     if (matIslands[i, j] == 1)
-                        dsu.parent[i * col + j] = i * col + j; // make set for each nonzero cell
+                        dsu.makeSet(i * col + j); // make set for each nonzero cell
                     else
                         dsu.parent[i * col + j] = -1;
                 }
