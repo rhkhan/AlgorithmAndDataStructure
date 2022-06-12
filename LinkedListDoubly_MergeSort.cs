@@ -95,7 +95,7 @@ public class LinkedListDoubly{
     public static void Main(String[] args)  
     {  
   
-        LinkedList list = new LinkedList();  
+        LinkedListDoubly list = new LinkedListDoubly();  
         list.head = new Node(10);  
         list.head.next = new Node(30);  
         list.head.next.next = new Node(3);  
