@@ -64,12 +64,14 @@ namespace MergeTwoSortedLinkedList
             while (nodeA != null)
             {
                 temp.next = nodeA;
+                temp = temp.next;
                 nodeA = nodeA.next;
             }
 
             while (nodeB != null)
             {
                 temp.next = nodeB;
+                temp = temp.next;
                 nodeB = nodeB.next;
             }
             return result.next;
